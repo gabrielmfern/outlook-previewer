@@ -10,7 +10,7 @@ export function Root({ className, ...props }: TabsProps) {
 	return (
 		<Base.Root
 			{...props}
-			className={cn("rounded-md border border-slate-10", className)}
+			className={cn("rounded-md", className)}
 		/>
 	);
 }
@@ -23,7 +23,7 @@ export function List({ className, ...props }: TabsListProps) {
 			{...props}
 			tabIndex={0}
 			className={cn(
-				"relative z-0 flex gap-1 px-1 shadow-[inset_0_-1px] shadow-slate-10",
+				"relative z-0 flex gap-1 px-2",
 				className,
 			)}
 		/>
@@ -38,7 +38,7 @@ export function Tab({ className, ...props }: TabProps) {
 			{...props}
 			className={cn(
 				"flex text-slate-10 h-8 items-center justify-center border-0 rounded-md px-2 text-sm font-medium select-none hover:text-slate-11",
-				"data-[selected]:text-slate-11 data-[selected]:bg-slate-6",
+				"data-[selected]:text-slate-11 data-[selected]:bg-slate-7",
 				"transition-colors",
 				className,
 			)}
@@ -49,5 +49,5 @@ export function Tab({ className, ...props }: TabProps) {
 type PanelProps = ComponentProps<typeof Base.Panel>;
 
 export function Panel({ className, ...props }: PanelProps) {
-	return <Base.Panel {...props} className={cn(className)} />;
+	return <Base.Panel {...props} className={cn("px-2", className)} />;
 }
