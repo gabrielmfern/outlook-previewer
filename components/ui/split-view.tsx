@@ -62,11 +62,24 @@ export function SplitView({ className, children, ...props }: SplitViewProps) {
 				aria-valuemin={0}
 				aria-valuenow={firstSplitWidth}
 				ref={resizeHandleRef}
+				onKeyDown={(event) => {
+					if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+						setFirstSplitWidth((prev) => Math.max(prev - 0.01, 0));
+					}
+					if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+						setFirstSplitWidth((prev) => Math.min(prev + 0.01, 1));
+					}
+				}}
 				onMouseDown={(event) => {
 					event.preventDefault();
 					setIsDragging(true);
 				}}
-				className="appearance-none cursor-row-resize w-1 h-full bg-slate-8 hover:bg-green/40 hover:ring-2 hover:ring-green/10 transition-colors" role="separator"
+				className="
+          appearance-none cursor-row-resize w-1 h-full bg-slate-8 outline-none
+          hover:bg-green/40 hover:ring-2 hover:ring-green/10 transition-colors
+          focus-visible:bg-green/40 focus-visible:ring-2 focus-visible:ring-green/10
+        "
+				role="separator"
 				tabIndex={0}
 			/>
 			{children[1](`${secondSplitWidth * 100}%`)}
