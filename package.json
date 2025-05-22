@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,10 +11,13 @@
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-alpha.8",
     "@monaco-editor/react": "4.7.0",
+    "clsx": "^2.1.1",
+    "motion": "^12.12.1",
     "next": "15.3.2",
     "prism-react-renderer": "2.4.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0-beta.5",

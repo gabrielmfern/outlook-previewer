@@ -5,28 +5,40 @@
   --foreground: var(--color-slate-12);
 }
 
-@theme inline {
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-slate-1: #00000000;
-  --color-slate-2: #d8f4f609;
-  --color-slate-3: #ddeaf814;
-  --color-slate-4: #d3edf81d;
-  --color-slate-5: #d9edfe25;
-  --color-slate-6: #d6ebfd30;
-  --color-slate-7: #d9edff40;
-  --color-slate-8: #d9edff5d;
-  --color-slate-9: #dfebfd6d;
-  --color-slate-10: #e5edfd7b;
-  --color-slate-11: #f1f7feb5;
-  --color-slate-12: #fcfdffef;
+  --color-*: initial;
+
+  --color-green-1: #00fff61d;
+  --color-green-2: #67ffded2;
+
+  --color-slate-1: rgba(0, 0, 0, 0);
+  --color-slate-2: rgba(216, 244, 246, 0.04);
+  --color-slate-3: rgba(221, 234, 248, 0.08);
+  --color-slate-4: rgba(211, 237, 248, 0.11);
+  --color-slate-5: rgba(217, 237, 254, 0.15);
+  --color-slate-6: rgba(214, 235, 253, 0.19);
+  --color-slate-7: rgba(217, 237, 255, 0.25);
+  --color-slate-8: rgba(217, 237, 255, 0.37);
+  --color-slate-9: rgba(223, 235, 253, 0.43);
+  --color-slate-10: rgba(229, 237, 253, 0.48);
+  --color-slate-11: rgba(241, 247, 254, 0.71);
+  --color-slate-12: rgba(252, 253, 255, 0.94);
 }
 
-::selection {
-  background: #00fff61d;
-  color: #67ffded2;
+@layer base {
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-green-2;
+  }
+
+  *::selection {
+    background: var(--color-green-1);
+    color: var(--color-green-2);
+  }
 }
+
 
 body {
   background: var(--background);
