@@ -12,6 +12,8 @@
   --color-*: initial;
 
   --color-green: #67ffde;
+  --color-white: #ffffff;
+  --color-danger: #CF6679;
 
   --color-slate-1: rgba(0, 0, 0, 0);
   --color-slate-2: rgba(216, 244, 246, 0.04);

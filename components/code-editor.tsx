@@ -1,23 +1,25 @@
-import { Editor, useMonaco } from "@monaco-editor/react";
+import { Editor } from "@monaco-editor/react";
 import { vesper } from "@/lib/vesper";
-import { useEffect } from "react";
 
-interface ReactEmailCodeEditorProps {
+interface CodeEditorProps {
+  readonly?: boolean;
   code: string;
-  onChange: (code: string) => void;
+  onChange?: (code: string) => void;
 }
 
-export function ReactEmailCodeEditor({
+export function CodeEditor({
+  readonly = false,
   code,
   onChange,
-}: ReactEmailCodeEditorProps) {
+}: CodeEditorProps) {
   return (
     <Editor
       height="100%"
-      defaultLanguage="typescript"
+      language="typescript"
       className="font-mono"
       options={{
         fontSize: 24,
+        readOnly: readonly,
         automaticLayout: true,
         minimap: { enabled: false },
         wordWrap: "on",
@@ -68,7 +70,7 @@ export function ReactEmailCodeEditor({
       path="file:///email.tsx"
       theme="vesper"
       onChange={(value) => {
-        onChange(value ?? "");
+        onChange?.(value ?? "");
       }}
     />
   );

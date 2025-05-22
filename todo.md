@@ -1,8 +1,8 @@
 ## Setup
 
 - [x] Make owned UI Tabs component to use on both splits
-- [ ] Implement SplitView component
-- [ ] Setup Code Editor for React Email
+- [x] Implement SplitView component
+- [x] Setup Code Editor for React Email
 - [ ] Setup simple email rendering to an iframe
 
 ## Exploration work
