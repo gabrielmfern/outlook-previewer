@@ -11,8 +11,7 @@
 
   --color-*: initial;
 
-  --color-green-1: #00fff61d;
-  --color-green-2: #67ffded2;
+  --color-green: #67ffde;
 
   --color-slate-1: rgba(0, 0, 0, 0);
   --color-slate-2: rgba(216, 244, 246, 0.04);
@@ -30,12 +29,11 @@
 
 @layer base {
   *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-green-2;
+    @apply outline-2 outline-offset-2 outline-green/60;
   }
 
   *::selection {
-    background: var(--color-green-1);
-    color: var(--color-green-2);
+    @apply bg-green/10 text-green/60
   }
 }
 
