@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check . --write"
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-alpha.8",

@@ -28,9 +28,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${notoSansMono.variable} antialiased`}
       >
-        <div className="root">
-          {children}
-        </div>
+        <div className="root">{children}</div>
       </body>
     </html>
   );
