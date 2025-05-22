@@ -1,4 +1,3 @@
-"use client";
 import { type ComponentProps, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 

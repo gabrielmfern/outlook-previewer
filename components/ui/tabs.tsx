@@ -1,5 +1,3 @@
-"use client";
-
 import { Tabs as Base } from "@base-ui-components/react";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
