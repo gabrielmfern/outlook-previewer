@@ -110,16 +110,27 @@ export default function EmailFeatureTest() {
           color: "#ffffff",
         }}
       >
-        {/* Main Container */}
-        <div
-          style={{
-            maxWidth: "600px",
-            margin: "0 auto",
-            backgroundColor: colors[2],
-            padding: "20px",
-            border: `1px solid ${colors[4]}`,
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            #mainContainer {
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: ${colors[2]};
+              padding: 20px;
+              border: 1px solid ${colors[4]};
+            }
+          `,
+        }} />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              console.log('this should not run on email clients');
+            `
           }}
-        >
+        />
+        {/* Main Container */}
+        <div id="mainContainer">
           {/* Header */}
           <div
             style={{
