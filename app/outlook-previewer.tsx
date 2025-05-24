@@ -89,7 +89,7 @@ export function OutlookPreviewer() {
             {renderingResult && "exception" in renderingResult ? (
               <ErrorOverlay
                 exception={renderingResult.exception}
-                className="absolute left-1/2 top-1/2 w-1/3 h-2/3"
+                className="absolute left-1/2 top-1/2 -translate-1/2 w-2/3 h-1/3"
               />
             ) : null}
             <Tabs.List>
