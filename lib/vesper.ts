@@ -1,6 +1,3 @@
-// Coming from https://github.com/raunofreiberg/vesper/tree/main
-//
-// Under the MIT license - owned by Rauno Freiberg
 export const vesper = {
   base: "vs-dark" as const,
   inherit: true,
@@ -9,8 +6,8 @@ export const vesper = {
     { token: "punctuation.definition.comment", foreground: "8B8B8B94" },
     { token: "variable", foreground: "FFFFFF" },
     { token: "string constant.other.placeholder", foreground: "FFFFFF" },
-    { token: "entity.name.tag", foreground: "FFFFFF" }, // Note: Also styled by a more specific "Tag" rule later
-    { token: "constant.other.color", foreground: "FFFFFF" }, // Note: Also styled by "Operator, Misc" and "Number, Constant..."
+    { token: "entity.name.tag", foreground: "FFFFFF" },
+    { token: "constant.other.color", foreground: "FFFFFF" },
     { token: "invalid", foreground: "FF8080" },
     { token: "invalid.illegal", foreground: "FF8080" },
     { token: "keyword", foreground: "A0A0A0" },
@@ -38,7 +35,7 @@ export const vesper = {
     { token: "constant.numeric", foreground: "FFC799" },
     { token: "support.constant", foreground: "FFC799" },
     { token: "constant.character", foreground: "FFC799" },
-    { token: "constant.escape", foreground: "FFC799" }, // Note: Also styled by "Escape Characters"
+    { token: "constant.escape", foreground: "FFC799" },
     { token: "keyword.other.unit", foreground: "FFC799" },
     { token: "keyword.other", foreground: "FFC799" },
     { token: "constant.language.boolean", foreground: "FFC799" },
@@ -56,7 +53,7 @@ export const vesper = {
     { token: "support.other.namespace.use.php", foreground: "FFC799" },
     { token: "meta.use.php", foreground: "FFC799" },
     { token: "support.other.namespace.php", foreground: "FFC799" },
-    { token: "markup.changed.git_gutter", foreground: "FFC799" }, // Note: Also styled by "Changed"
+    { token: "markup.changed.git_gutter", foreground: "FFC799" },
     { token: "support.type.sys-types", foreground: "FFC799" },
     { token: "source.css support.type.property-name", foreground: "FFFFFF" },
     { token: "source.sass support.type.property-name", foreground: "FFFFFF" },
@@ -72,8 +69,8 @@ export const vesper = {
     { token: "variable.parameter.keyframe-list.css", foreground: "FFFFFF" },
     { token: "meta.property-name.css", foreground: "FFFFFF" },
     { token: "variable.parameter.url.scss", foreground: "FFFFFF" },
-    { token: "meta.property-value.scss", foreground: "FFFFFF" }, // Note: Also styled by "Attributes"
-    { token: "meta.property-value.css", foreground: "FFFFFF" }, // Note: Also styled by "Attributes"
+    { token: "meta.property-value.scss", foreground: "FFFFFF" },
+    { token: "meta.property-value.css", foreground: "FFFFFF" },
     { token: "entity.name.module.js", foreground: "FF8080" },
     { token: "variable.import.parameter.js", foreground: "FF8080" },
     { token: "variable.other.class.js", foreground: "FF8080" },
@@ -86,7 +83,7 @@ export const vesper = {
     { token: "variable.function.constructor", foreground: "FFFFFF" },
     { token: "entity.other.attribute-name", foreground: "A0A0A0" },
     { token: "meta.property-list.scss", foreground: "A0A0A0" },
-    { token: "meta.attribute-selector.scss", foreground: "A0A0A0" }, // Note: Also styled by "CSS Classes" and "CSS ID's"
+    { token: "meta.attribute-selector.scss", foreground: "A0A0A0" },
     { token: "entity.other.keyframe-offset.css", foreground: "A0A0A0" },
     { token: "meta.selector.css", foreground: "A0A0A0" },
     { token: "entity.name.tag.reference.scss", foreground: "A0A0A0" },
@@ -230,7 +227,7 @@ export const vesper = {
       token: "markup.quote punctuation.definition.blockquote.markdown",
       foreground: "FFFFFF",
     },
-    // { token: 'markup.quote' }, // This rule has no settings, so it's omitted
+
     { token: "string.other.link.title.markdown", foreground: "FFFFFF" },
     {
       token: "string.other.link.description.title.markdown",
@@ -240,9 +237,8 @@ export const vesper = {
     { token: "markup.raw.block", foreground: "A0A0A0" },
     { token: "markup.raw.block.fenced.markdown", foreground: "00000050" },
     { token: "punctuation.definition.fenced.markdown", foreground: "00000050" },
-    { token: "variable.language.fenced.markdown", foreground: "FFFFFF" }, // Note: Also styled by "Markdown - Fenced Language"
+    { token: "variable.language.fenced.markdown", foreground: "FFFFFF" },
     { token: "punctuation.section.class.end", foreground: "FFFFFF" },
-    // { token: 'variable.language.fenced.markdown', foreground: 'FFFFFF' }, // Duplicate of above, from "Markdown - Fenced Language"
     { token: "meta.separator", fontStyle: "bold", foreground: "65737E" },
     { token: "markup.table", foreground: "FFFFFF" },
   ],
