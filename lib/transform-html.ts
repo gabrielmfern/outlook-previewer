@@ -23,11 +23,7 @@
  */
 export function transformHtml(source: string) {
   const parser = new DOMParser();
-  const doc = parser.parseFromString(
-    `<fake-root-element>${source}</fake-root-element>`,
-    // If we use `text/html`, the parser will make changes to the incoming HTML and so make it harder to test.
-    "text/html",
-  );
+  const doc = parser.parseFromString(source, "text/html");
 
   const body = doc.querySelector("body");
   if (body) {
@@ -39,17 +35,17 @@ export function transformHtml(source: string) {
     body.replaceWith(newBody);
   }
 
-  const html = doc.querySelector("html");
-  if (html) {
-    const newHtml = doc.createElement("div");
-    for (const attribute of html.attributes) {
-      newHtml.setAttribute(attribute.name, attribute.value);
-    }
-    newHtml.setAttribute("role", "document");
-    newHtml.innerHTML = html.innerHTML;
-    html.replaceWith(newHtml);
+  const html = doc.querySelector("html")!;
+  const divRoot = doc.createElement("div");
+  for (const attribute of html.attributes) {
+    divRoot.setAttribute(attribute.name, attribute.value);
   }
-  console.log(doc.documentElement.outerHTML);
+  divRoot.setAttribute("role", "document");
+  divRoot.innerHTML = html.innerHTML;
+  // we can't replaceWith on the `html` element because it isn't one DOM operation,
+  // it is two - insert, and then remove the old one - which would require two elements
+  // to be the in the root of the document which is not allowed in HTML.
+  html.replaceChildren(divRoot);
 
-  return doc.querySelector("fake-root-element")!.innerHTML;
+  return html.innerHTML;
 }

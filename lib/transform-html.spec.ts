@@ -2,21 +2,15 @@ import { describe, expect, it } from "bun:test";
 import { transformHtml } from "./transform-html";
 
 describe("transformHtml", () => {
-  it('should replace <html> with <div role="document">', () => {
+  it('should replace <html> with <div role="document"> and <body> with <div>', () => {
     expect(
       transformHtml(
-        '<html class="my-html">this is the content of this document</html>',
+        '<html class="my-html"><body class="body-class">this is the <strong>content</strong> of this document</body></html>',
       ),
     ).toBe(
-      '<div class="my-html" role="document">this is the content of this document</div>',
+      '<div class="my-html" role="document"><div class="body-class">this is the <strong>content</strong> of this document</div></div>',
     );
   });
 
-  it("should replace <body> with <div>", () => {
-    expect(
-      transformHtml(
-        '<body class="body-class">some child <div>children</div></body>',
-      ),
-    ).toBe('<div class="body-class">some child <div>children</div></div>');
-  });
+  // it("should replace")
 });
