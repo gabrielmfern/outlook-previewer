@@ -74,7 +74,7 @@ export function SplitView({ className, children, ...props }: SplitViewProps) {
           setIsDragging(true);
         }}
         className="
-          appearance-none cursor-row-resize outline-none px-2 flex items-center w-fit h-full
+          appearance-none cursor-ew-resize outline-none px-1 flex items-center justify-center w-fit h-full [background-image:url('/serrated.svg')]
           focus-visible:ring-2 focus-visible:ring-green/10
         "
         role="slider"
