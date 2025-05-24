@@ -243,7 +243,7 @@ export const vesper = {
     { token: "markup.table", foreground: "FFFFFF" },
   ],
   colors: {
-    "editor.background": "#101010",
+    "editor.background": "#0e0f14",
     "editor.foreground": "#FFFFFF",
     "editor.selectionBackground": "#FFFFFF25",
     "editor.selectionHighlightBackground": "#FFFFFF25",
