@@ -3,13 +3,13 @@
 - [x] Make owned UI Tabs component to use on both splits
 - [x] Implement SplitView component
 - [x] Setup Code Editor for React Email
-- [ ] Setup simple email rendering to an iframe
+- [x] Setup simple email rendering to an iframe
 
 ## Exploration work
 
-- [ ] Write down email template using the majority of common modern functionality
-- [ ] Send modern email and compare Outlook's HTML with the sent one
-- [ ] Write down all unsupported features and changes to HTML
+- [x] Write down email template using the majority of common modern functionality
+- [x] Send modern email and compare Outlook's HTML with the sent one
+- [x] Write down all unsupported features and changes to HTML
     - Along with unsupported features, write down how the email client reacted when they were used
 
 ## Bonus

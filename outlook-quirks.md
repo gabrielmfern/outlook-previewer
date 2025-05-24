@@ -1,0 +1,18 @@
+- Body gets converted into `<div>`
+- All classes have an `x_` prefix at the start
+- Wraps all selectors to only apply under a certain element
+- Resolves CSS variables and strips them away
+- The following features were completely stripped away
+  - SVG elements
+  - <progress> element
+  - <meter> element
+  - <details>/<summary> element
+  - grid-template-columns
+  - @keyframes, animation
+  - backdrop-filter
+  - clip-path
+  - filter
+  - gap
+  - transform
+  - transition
+  - text-shadow
