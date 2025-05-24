@@ -1,8 +1,0 @@
-<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="serrated" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-      <path d="M0,4 L2,2 L4,4 L4,0 L2,2 L0,0 Z" fill="var(--color-slate-4)"/>
-    </pattern>
-  </defs>
-  <rect width="12" height="12" fill="url(#serrated)"/>
-</svg>
