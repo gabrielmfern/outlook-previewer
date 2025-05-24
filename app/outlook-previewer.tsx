@@ -27,7 +27,9 @@ function useRenderingResult(react: string) {
         const elementFactory = new Function(
           "scope",
           "React",
-          transformedReact.replaceAll("export default ", "scope.email = "),
+          transformedReact
+            .replaceAll("export default ", "scope.email = ")
+            .replaceAll("export ", "scope.exports = "),
         );
         const scope = {
           email: undefined,
