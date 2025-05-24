@@ -19,11 +19,11 @@ function useRenderingResult(react: string) {
 
   useEffect(() => {
     (async () => {
-      const transformedReact = transform(react, {
-        transforms: ["jsx", "typescript"],
-        production: true,
-      }).code;
       try {
+        const transformedReact = transform(react, {
+          transforms: ["jsx", "typescript"],
+          production: true,
+        }).code;
         const elementFactory = new Function(
           "scope",
           "React",
@@ -102,6 +102,43 @@ export function OutlookPreviewer() {
                 "html" in lastDefinedRenderingResult ? (
                   <iframe
                     srcDoc={lastDefinedRenderingResult.html}
+                    ref={(iframe) => {
+                      if (iframe) {
+                        const mouseMoveBubbler = (event: MouseEvent) => {
+                          const bounds = iframe.getBoundingClientRect();
+                          document.dispatchEvent(
+                            new MouseEvent("mousemove", {
+                              ...event,
+                              clientX: event.clientX + bounds.x,
+                              clientY: event.clientY + bounds.y,
+                            }),
+                          );
+                        };
+                        const mouseUpBubbler = (event: MouseEvent) => {
+                          document.dispatchEvent(
+                            new MouseEvent("mouseup", event),
+                          );
+                        };
+                        iframe.contentDocument?.addEventListener(
+                          "mousemove",
+                          mouseMoveBubbler,
+                        );
+                        iframe.contentDocument?.addEventListener(
+                          "mouseup",
+                          mouseUpBubbler,
+                        );
+                        return () => {
+                          iframe.contentDocument?.removeEventListener(
+                            "mousemove",
+                            mouseMoveBubbler,
+                          );
+                          iframe.contentDocument?.removeEventListener(
+                            "mouseup",
+                            mouseUpBubbler,
+                          );
+                        };
+                      }
+                    }}
                     className="w-full h-full bg-white"
                     title="Outlook Preview"
                   />
