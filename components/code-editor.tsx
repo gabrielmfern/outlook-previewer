@@ -18,10 +18,13 @@ export function CodeEditor({
       language="typescript"
       className="font-mono"
       options={{
-        fontSize: 24,
+        fontSize: 16,
         readOnly: readonly,
         automaticLayout: true,
         minimap: { enabled: false },
+        scrollbar: {
+          vertical: 'hidden',
+        },
         wordWrap: "on",
       }}
       beforeMount={async (monaco) => {

@@ -51,7 +51,7 @@ export function SplitView({ className, children, ...props }: SplitViewProps) {
     <div
       {...props}
       ref={splitViewRef}
-      className={cn("w-full h-full flex gap-px overflow-hidden", className)}
+      className={cn("w-full h-full flex overflow-hidden", className)}
     >
       {children[0](`${firstSplitWidth * 100}%`)}
       <div
@@ -74,13 +74,14 @@ export function SplitView({ className, children, ...props }: SplitViewProps) {
           setIsDragging(true);
         }}
         className="
-          appearance-none cursor-row-resize w-1 h-full bg-slate-8 outline-none
-          hover:bg-green/40 hover:ring-2 hover:ring-green/10 transition-colors
-          focus-visible:bg-green/40 focus-visible:ring-2 focus-visible:ring-green/10
+          appearance-none cursor-row-resize outline-none px-2 flex items-center w-fit h-full
+          focus-visible:ring-2 focus-visible:ring-green/10
         "
-        role="separator"
+        role="slider"
         tabIndex={0}
-      />
+      >
+        <div className="w-1 h-16 rounded bg-slate-7" />
+      </div>
       {children[1](`${secondSplitWidth * 100}%`)}
     </div>
   );

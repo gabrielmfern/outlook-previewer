@@ -15,7 +15,7 @@ export function List({ className, ...props }: TabsListProps) {
     <Base.List
       {...props}
       tabIndex={0}
-      className={cn("relative z-0 flex gap-1 px-2", className)}
+      className={cn("relative z-0 flex gap-1", className)}
     />
   );
 }
@@ -39,5 +39,5 @@ export function Tab({ className, ...props }: TabProps) {
 type PanelProps = ComponentProps<typeof Base.Panel>;
 
 export function Panel({ className, ...props }: PanelProps) {
-  return <Base.Panel {...props} className={cn("px-2", className)} />;
+  return <Base.Panel {...props} className={cn( className)} />;
 }
